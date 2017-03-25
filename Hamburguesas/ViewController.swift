@@ -9,17 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let paises = ColeccionDePaises()
+    let hamburguesas = ColeccionDeHamburguesas()
+    let colores = Colores()
+    
+    @IBOutlet weak var muestraHamburguesa: UILabel!
+    
+    @IBOutlet weak var muestraPais: UILabel!
+    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func traeHamburguesa(_ sender: UIButton) {
+        
+        let color = colores.obtenColor()
+        view.backgroundColor = color
+        
+        muestraHamburguesa.text = hamburguesas.obtenHamburguesa()
+        
+        muestraPais.text = paises.obtenPais()
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
